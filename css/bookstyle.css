@@ -14,9 +14,10 @@ body {
     grid-template-rows: auto;
     grid-template-areas: 
         "banner banner"
+        "nav nav"
         "side main"
         "footer footer";
-        grid-gap: 4px;
+    grid-gap: 4px;
     
 }
 
@@ -34,7 +35,7 @@ body {
 
 /* logo, banner and footer background are the same */
 .logo, .banner, .footer {
-    background-color: #888;  /* dark grey */
+    background-color: #4E658E;  /* Queen Blue */
 }
 
 /* Set font on dark areas to white */
@@ -56,14 +57,14 @@ body {
 
 .nav {
     grid-area: nav;
-    background-color: #DDD;  /* silver */
+    background-color: #64C7FD;  /* Maya Blue */
     font-size: 150%;
     text-align: center;
 }
 
 .side {
     grid-area: side;
-    background-color: antiquewhite;
+    background-color: #09396F;
     color: #000;
     border: solid 1px #ffd59e;
 }
@@ -88,7 +89,7 @@ h1, h2, h3, h4 {
 
 /* Navigation Links */
 .nav a {font-weight: bold; text-decoration: none;}
-.nav a:link, .nav a:visited {color: #AA0000;} /*dark red */
+.nav a:link, .nav a:visited {color: #000;} /* black */
 .nav a:hover {color: #604830;} /* chocolate brown */
 
 
@@ -123,6 +124,28 @@ a:hover{color: #000;}    /* Black*/
     font-weight: bold;
 }
 
+/* Results Box Formatting */
+.results {
+    background-color: #f4ebe1;
+    border-radius: 10px;
+    border: 1px solid #000;
+    padding: 5px;
+}
+
+/* Error Box formatting */
+.error {
+    background-color: #ffe0ed;  /*pale pink*/
+    border: 2px solid #8a1737;  /* dark red border */
+    color: #8a1737; /* dark red */
+    border-radius: 5px;
+    padding: 20px;
+}
+
+
+/* form formatting */
+.search {
+    width: 200px;
+}
 
 
 

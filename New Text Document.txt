@@ -1,0 +1,11 @@
+        <!-- Start of rating Search --> 
+        
+        <form method="post" action="rating_search.php" enctype="multipart/form-data">
+            
+            <input class="search" type="text" name="rating" size="40" value="" required placeholder="rating..." />
+            
+            <input class="submit" type="submit" name="find_rating" value="Search" />
+            
+        </form>
+            
+        <!-- End of rating Search -->

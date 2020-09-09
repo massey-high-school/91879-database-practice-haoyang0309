@@ -1,24 +1,50 @@
 <?php include "topbit.php";
 
-$showall_sql="SELECT *
+
+// if find button pushed...
+if(isset($_POST['find_rating']))
+
+{
+
+// Retrieves author and sanitises it.
+$amount=test_input(mysqli_real_escape_string($dbconnect,$_POST['amount']));
+$stars=test_input(mysqli_real_escape_string($dbconnect,$_POST['stars']));
+
+if ($amount=="exactly")
+
+{
+    $showall_sql="SELECT *
 FROM `L1_prac_book_reviews`
-ORDER BY `L1_prac_book_reviews`.`Title` ASC
+WHERE `Rating` = $stars
 LIMIT 0 , 30";
+}
+
+elseif ($amount=="less")
+    
+{
+    $showall_sql="SELECT *
+FROM `L1_prac_book_reviews`
+WHERE `Rating` <= $stars
+LIMIT 0 , 30";
+}
+
+else {
+    $showall_sql="SELECT *
+FROM `L1_prac_book_reviews`
+WHERE `Rating` >= $stars
+LIMIT 0 , 30";
+}
+    
 $showall_query=mysqli_query($dbconnect, $showall_sql);
 $showall_rs=mysqli_fetch_assoc($showall_query);
 $count=mysqli_num_rows($showall_query);
 
 
 ?>
-
-<div class="box nav">
-    <a href="index.php">Home</a>   |  
-    <a href="contact.html">Contact</a>
-</div>  <!-- / nav -->
-
+        
 <div class="box main">
     
-    <h2>All Items</h2>
+    <h2>Author search</h2>
     
     <?php
     
@@ -91,6 +117,8 @@ $count=mysqli_num_rows($showall_query);
     }   // end else
     
     // if there are results, display them
+    
+    } // end 'isset'
     
     ?>
 

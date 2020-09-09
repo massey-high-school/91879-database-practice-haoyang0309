@@ -1,8 +1,18 @@
 <?php include "topbit.php";
 
+
+// if find button pushed...
+if(isset($_POST['find_title']))
+
+{
+
+// Retrieves title and sanitises it.
+$title=test_input(mysqli_real_escape_string($dbconnect,$_POST['title']));
+
+    
 $showall_sql="SELECT *
 FROM `L1_prac_book_reviews`
-ORDER BY `L1_prac_book_reviews`.`Title` ASC
+WHERE `Title` LIKE '%$title%'
 LIMIT 0 , 30";
 $showall_query=mysqli_query($dbconnect, $showall_sql);
 $showall_rs=mysqli_fetch_assoc($showall_query);
@@ -10,15 +20,10 @@ $count=mysqli_num_rows($showall_query);
 
 
 ?>
-
-<div class="box nav">
-    <a href="index.php">Home</a>   |  
-    <a href="contact.html">Contact</a>
-</div>  <!-- / nav -->
-
+        
 <div class="box main">
     
-    <h2>All Items</h2>
+    <h2>Title search</h2>
     
     <?php
     
@@ -91,6 +96,8 @@ $count=mysqli_num_rows($showall_query);
     }   // end else
     
     // if there are results, display them
+    
+    } // end 'isset'
     
     ?>
 
