@@ -10,7 +10,7 @@ body {
 
 .wrapper {
     display: grid;
-    grid-template-columns: 250px 1fr;
+    grid-template-columns: 280px 1fr;
     grid-template-rows: auto;
     grid-template-areas: 
         "banner banner"
@@ -57,16 +57,16 @@ body {
 
 .nav {
     grid-area: nav;
-    background-color: #64C7FD;  /* Maya Blue */
+    background-color: #5996C6;  /* Blue Gray */
     font-size: 150%;
     text-align: center;
 }
 
 .side {
     grid-area: side;
-    background-color: #09396F;
-    color: #000;
-    border: solid 1px #ffd59e;
+    background-color: #0A3A71;  /* Indigo Dye */
+    color: #fff;
+    border: solid 1px #CCC;
 }
 
 .main {
@@ -96,8 +96,8 @@ h1, h2, h3, h4 {
 /* links in page */
 a {font-weight: bold;}
 a:link{color: #AA0000;} /*dark_red */
-a:visited{color: #111177;} /* dark blue */
-a:hover{color: #000;}    /* Black*/
+a:visited{color: #fff;} /* white */
+a:hover{color: #fff;}    /* white*/
 
 
 /* Contact Form Styling */
@@ -143,15 +143,51 @@ a:hover{color: #000;}    /* Black*/
 
 
 /* form formatting */
+
+form {
+    width: 250px;
+
+}
 .search {
     width: 200px;
+    padding: 8px 15px;
+    background: #fff;
 }
 
+.submit {
+    font-family: FontAwesome;
+    position: relative;
+    width: 45px;
+    left: -1px;
+    background: #636363;
+    color: #d6d6d6;
+    border: 1px solid #636263;
+    border-radius: 0 5px 5px 0;
+}
 
+input[type="submit"]:hover {
+    background-color: #000;
+}
 
+input {
+    height: 40px;
+    padding: 10px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+}
 
+.half_width {
+    width: 99px;
+}
 
-
+select {
+    outline: 0;
+    height: 40px;
+    border: 1px solid #ccc;
+    color: #878787;
+    width: 200px;
+}
 
 
 

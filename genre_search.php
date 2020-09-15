@@ -1,8 +1,18 @@
 <?php include "topbit.php";
 
+
+// if find button pushed...
+if(isset($_POST['find_genre']))
+
+{
+
+// Retrieves genre and sanitises it.
+$genre=test_input(mysqli_real_escape_string($dbconnect,$_POST['genre']));
+
+    
 $showall_sql="SELECT *
 FROM `L1_prac_book_reviews`
-ORDER BY `L1_prac_book_reviews`.`Title` ASC
+WHERE `genre` LIKE '%$genre%'
 LIMIT 0 , 30";
 $showall_query=mysqli_query($dbconnect, $showall_sql);
 $showall_rs=mysqli_fetch_assoc($showall_query);
@@ -10,12 +20,10 @@ $count=mysqli_num_rows($showall_query);
 
 
 ?>
-
-
-
+        
 <div class="box main">
     
-    <h2>All Items</h2>
+    <h2>Genre search</h2>
     
     <?php
     
@@ -50,7 +58,7 @@ $count=mysqli_num_rows($showall_query);
         
         <p>Title: <span class="sub_heading"><?php echo $showall_rs['Title']; ?></span></p>
         
-        <p>Author: <span class="sub_heading"><?php echo $showall_rs['Author']; ?></span></p>
+        <p>Genre: <span class="sub_heading"><?php echo $showall_rs['Genre']; ?></span></p>
         
         <p>Genre: <span class="sub_heading"><?php echo $showall_rs['Genre']; ?></span></p>
         
@@ -88,6 +96,8 @@ $count=mysqli_num_rows($showall_query);
     }   // end else
     
     // if there are results, display them
+    
+    } // end 'isset'
     
     ?>
 
