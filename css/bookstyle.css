@@ -95,9 +95,9 @@ h1, h2, h3, h4 {
 
 /* links in page */
 a {font-weight: bold;}
-a:link{color: #AA0000;} /*dark_red */
+a:link{color: #fff;} /*white */
 a:visited{color: #fff;} /* white */
-a:hover{color: #fff;}    /* white*/
+a:hover{color: darkgray;}    /* white*/
 
 
 /* Contact Form Styling */

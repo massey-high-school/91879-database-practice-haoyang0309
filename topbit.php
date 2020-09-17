@@ -93,7 +93,13 @@
     </form>
 
     <!-- End of author Search -->
-<hr />
+    <hr />
+        
+        
+    <i>Use the dropdown menus to search by genre or rating</i>
+
+    <hr />
+        
         
     <!-- Start of genre Search --> 
 
@@ -133,7 +139,8 @@
 
 <hr />
     <!-- Start of ratings Search --> 
-
+    
+    <h3>Ratings Search</h3>
     <form method="post" action="rating_search.php" enctype="multipart/form-data">
 
         <select class="half_width" name="amount">
